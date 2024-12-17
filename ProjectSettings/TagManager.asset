@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Logic
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Bird
   - Water
   - UI
-  - 
+  - coin
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: background
     uniqueID: 3986317227
+    locked: 0
+  - name: coin
+    uniqueID: 4154422983
     locked: 0
   - name: Default
     uniqueID: 0

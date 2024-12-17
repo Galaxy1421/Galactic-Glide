@@ -93,4 +93,6 @@ public class BirdScript : MonoBehaviour
         birdAudio.PlayOneShot(winSound, winVolume);
         logic.winGame();
     }
+
+
 }
