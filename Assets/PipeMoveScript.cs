@@ -2,27 +2,15 @@
 
 public class PipeMoveScript : MonoBehaviour
 {
-    public float moveSpeed; // سرعة الأنبوب تُضبط عند التوليد
-    public float deadZone = -45; // منطقة الحذف خارج الشاشة
-    private bool isPassed = false; // لتجنب احتساب الأنبوب أكثر من مرة
-    public Transform bird; // موقع اللاعب
-
-    void Start()
-    {
-        bird = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    public float moveSpeed;      // سرعة حركة الأنبوب
+    public float deadZone = -45f;     // منطقة الحذف خارج الشاشة
 
     void Update()
     {
+        // تحريك الأنبوب إلى اليسار
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
-        if (transform.position.x < bird.position.x && !isPassed)
-        {
-            isPassed = true; 
-            FindObjectOfType<BirdScript>().PassPipe(); 
-        }
-
-   
+        // حذف الأنبوب عند خروجه من منطقة الرؤية
         if (transform.position.x < deadZone)
         {
             Debug.Log("Pipe deleted");

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f3f708225220abe40a0cff23abb86b43
+guid: 4b25a16331ecb2e4e961ffbb926660f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8634368658134348540
-    second: unitytut-pipe_0
+      213: -8320584601549660393
+    second: astronaut_1083544_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: unitytut-pipe_0
+      name: astronaut_1083544_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 533
-        height: 2186
+        y: 15
+        width: 512
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40dc228c37f8c2880800000000000000
-      internalID: -8634368658134348540
+      spriteID: 71f1c05a368578c80800000000000000
+      internalID: -8320584601549660393
       vertices: []
       indices: 
       edges: []
