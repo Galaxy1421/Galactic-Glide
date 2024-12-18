@@ -17,9 +17,10 @@ public class BirdScript : MonoBehaviour
     public AudioClip hitSound;
     public AudioClip gameOverSound;
     public AudioClip winSound;
+    public AudioClip coinSound;
 
     [Header("Audio Volumes")]
-    public float hitVolume = 0.5f;
+    public float hitVolume;
     public float gameOverVolume = 0.7f;
     public float winVolume = 0.7f;
 
@@ -80,18 +81,35 @@ public class BirdScript : MonoBehaviour
     {
         if (birdIsAlive)
         {
+            // تشغيل صوت الضربة فورًا
             birdAudio.PlayOneShot(hitSound, hitVolume);
-            birdAudio.PlayOneShot(gameOverSound, gameOverVolume);
+
+            // تأخير صوت الخسارة
+            Invoke("PlayGameOverSound", 0.5f); // تأخير لمدة 0.5 ثانية (يمكنك تغيير الوقت)
+
             logic.gameOver();
             birdIsAlive = false;
         }
     }
+
+    // دالة لتشغيل صوت الخسارة
+    void PlayGameOverSound()
+    {
+        birdAudio.PlayOneShot(gameOverSound, gameOverVolume);
+    }
+
 
     void WinGame()
     {
         birdIsAlive = false;
         birdAudio.PlayOneShot(winSound, winVolume);
         logic.winGame();
+    }
+
+    public void CoinCollected()
+    {
+            birdAudio.PlayOneShot(coinSound,0.5f); // تشغيل صوت جمع العملة
+        
     }
 
 

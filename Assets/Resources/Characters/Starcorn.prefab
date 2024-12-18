@@ -308,10 +308,11 @@ MonoBehaviour:
   logic: {fileID: 0}
   birdIsAlive: 1
   flapSound: {fileID: 8300000, guid: 70f96274b38c79747964499815669f18, type: 3}
-  hitSound: {fileID: 8300000, guid: 881d0bdac99ce0f459e43fd7e4dd3d2f, type: 3}
-  gameOverSound: {fileID: 8300000, guid: ea2a262c89590774eb9949523363305d, type: 3}
+  hitSound: {fileID: 8300000, guid: 8d9190f957001ca43b16f8b91faf7170, type: 3}
+  gameOverSound: {fileID: 8300000, guid: f1509a8049a41684a9b6622efb09f6eb, type: 3}
   winSound: {fileID: 8300000, guid: 2d6a1cf7ad294104a9a2d58cb0b9325f, type: 3}
-  hitVolume: 0.7
+  coinSound: {fileID: 8300000, guid: 79e95513163f0114b8c7ec6365257168, type: 3}
+  hitVolume: 5
   gameOverVolume: 0.4
   winVolume: 0.5
   timeToWin: 60

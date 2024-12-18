@@ -2,43 +2,58 @@
 
 public class PipeSpawnerScript : MonoBehaviour
 {
-
-
     public GameObject pipe;
-    public float spawnRate;
-    public float timer = 0;
-    public float heightOffset;
+    public GameObject coinPrefab;
+    public float spawnRatePipes = 2f; // معدل ظهور الأنابيب
+    public float spawnRateCoins = 3f; // معدل ظهور العملات
+    public float heightOffsetPipes = 2f; // فرق الارتفاع للأنابيب
+    public float heightOffsetCoins = 1.5f; // فرق الارتفاع للعملات
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float pipeTimer = 0f;
+    private float coinTimer = 0f;
+
+
     void Start()
     {
-        spawnPipe();
+        SpawnPipe();
+        SpawnCoin();
     }
-
-    // Update is called once per frame
     void Update()
     {
-
-        if (timer < spawnRate)
+        // توليد الأنابيب
+        pipeTimer += Time.deltaTime;
+        if (pipeTimer >= spawnRatePipes)
         {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            spawnPipe();
-            timer = 0;
+            SpawnPipe();
+            pipeTimer = 0f;
         }
 
+        // توليد العملات
+        coinTimer += Time.deltaTime;
+        if (coinTimer >= spawnRateCoins)
+        {
+            SpawnCoin();
+            coinTimer = 0f;
+        }
     }
 
-    void spawnPipe()
+    void SpawnPipe()
     {
-        float lowestPoint = transform.position.y - heightOffset;
-        float highestPoint = transform.position.y + heightOffset;
-        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
+        // تحديد نطاق ارتفاع الأنابيب بشكل عشوائي
+        float lowestPoint = transform.position.y - heightOffsetPipes;
+        float highestPoint = transform.position.y + heightOffsetPipes;
 
-
+        // إنشاء الأنبوب
+        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0f), Quaternion.identity);
     }
-    
 
+    void SpawnCoin()
+    {
+        // تحديد موضع عشوائي للعملة
+        float randomY = Random.Range(-heightOffsetCoins, heightOffsetCoins);
+        Vector3 spawnPosition = new Vector3(transform.position.x, randomY, 0f);
+
+        // إنشاء العملة
+        Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
+    }
 }

@@ -1,29 +1,24 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PipeMiddleScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public LogicScript logic; // مرجع إلى سكربت النقاط
+    private bool hasScored = false; // منع تكرار تسجيل النقاط
 
-
-    public LogicScript logic;
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 3)
+        // التحقق من أن اللاعب هو من مر بالنقطة وأن النقاط لم تُحسب من قبل
+        if (collision.gameObject.CompareTag("Player") && !hasScored)
         {
-            logic.addScore(1);
+            logic.addPipeScore(1); // إضافة نقطة للأنبوب
+            hasScored = true;      // تحديد أن النقاط قد سُجلت
+            gameObject.SetActive(false); // تعطيل الكائن لمنع المزيد من التصادمات
+            Debug.Log("Pipe passed! Score updated.");
         }
-        
     }
 }
