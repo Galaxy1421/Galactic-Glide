@@ -11,9 +11,37 @@ public class LogicScript : MonoBehaviour
     public Text coinScoreText; // نص عرض عدد العملات
     public GameObject gameOverScreen;
     public GameObject winScreen;
+    public Text finalScoreText;      // نص عرض النقاط النهائية عند انتهاء اللعبة
+    public Text timerText;           // نص عرض الوقت المتبقي
+
+    private float timer = 0f;        // المؤقت الزمني
+    public float gameDuration = 60f; // مدة اللعبة (دقيقة واحدة)
+
     [ContextMenu("Increase Score")]
 
 
+
+    void Start()
+    {
+        UpdateScoreUI();
+    }
+
+    void Update()
+    {
+        // تحديث الوقت المتبقي
+        timer += Time.deltaTime;
+        if (timerText != null)
+        {
+            float timeLeft = Mathf.Ceil(gameDuration - timer); // الوقت المتبقي بالثواني
+            timerText.text = "Time Left: " + timeLeft + "s";
+        }
+
+        // إنهاء اللعبة عند انقضاء الوقت
+        if (timer >= gameDuration)
+        {
+            EndGame();
+        }
+    }
     public void addPipeScore(int numOfpipes)
     {
         pipeScore += numOfpipes; // أضف القيمة إلى المتغير العام
@@ -39,6 +67,16 @@ public class LogicScript : MonoBehaviour
             coinScoreText.text = "Coins: " + coinScore;
         }
     }
+
+    public void EndGame()
+    {
+        Time.timeScale = 0;
+        winScreen.SetActive(true); 
+        finalScoreText.text = "You passed " + pipeScore + " pipes\n" +
+                              "and collected " + coinScore + " coins!";
+    }
+
+
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -46,17 +84,13 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
+        Time.timeScale = 0;
         gameOverScreen.SetActive(true);
     }
 
-    public void winGame()
-    {
-        winScreen.SetActive(true); // تفعيل شاشة الفوز
-        Time.timeScale = 0;        // إيقاف اللعبة
-    }
     public void LoadMainMenu()
     {
-        Time.timeScale = 1; // إعادة تشغيل الوقت إذا كان موقوفًا
-        SceneManager.LoadScene("menu"); // استبدلي "menu" باسم مشهد القائمة الرئيسية لديكِ
+        Time.timeScale = 1; 
+        SceneManager.LoadScene("menu"); 
     }
 }

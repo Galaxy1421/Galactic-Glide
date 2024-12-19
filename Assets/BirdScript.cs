@@ -9,31 +9,21 @@ public class BirdScript : MonoBehaviour
     public LogicScript logic;
     public bool birdIsAlive = true;
 
-   
     private AudioSource birdAudio;    // مشغل الصوت
 
     [Header("Audio Clips")]
     public AudioClip flapSound;
     public AudioClip hitSound;
-    public AudioClip gameOverSound;
-    public AudioClip winSound;
     public AudioClip coinSound;
 
     [Header("Audio Volumes")]
     public float hitVolume;
-    public float gameOverVolume = 0.7f;
-    public float winVolume = 0.7f;
 
-    
     private float topBound;
     private float bottomBound;
 
-    private float timer = 0f;         // المؤقت الزمني
-    public float timeToWin = 60f;     // الوقت المطلوب للفوز (60 ثانية)
-
     void Start()
     {
-        // الحصول على المكونات تلقائيًا
         MyRigidbody = GetComponent<Rigidbody2D>();
         birdAudio = GetComponent<AudioSource>();
 
@@ -64,53 +54,20 @@ public class BirdScript : MonoBehaviour
             Mathf.Clamp(transform.position.y, bottomBound, topBound),
             transform.position.z
         );
-
-        // زيادة المؤقت والتحقق من شرط الفوز
-        if (birdIsAlive)
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= timeToWin)
-            {
-                WinGame();
-            }
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (birdIsAlive)
         {
-            // تشغيل صوت الضربة فورًا
             birdAudio.PlayOneShot(hitSound, hitVolume);
-
-            // تأخير صوت الخسارة
-            Invoke("PlayGameOverSound", 0.5f); // تأخير لمدة 0.5 ثانية (يمكنك تغيير الوقت)
-
             logic.gameOver();
             birdIsAlive = false;
         }
     }
 
-    // دالة لتشغيل صوت الخسارة
-    void PlayGameOverSound()
-    {
-        birdAudio.PlayOneShot(gameOverSound, gameOverVolume);
-    }
-
-
-    void WinGame()
-    {
-        birdIsAlive = false;
-        birdAudio.PlayOneShot(winSound, winVolume);
-        logic.winGame();
-    }
-
     public void CoinCollected()
     {
-            birdAudio.PlayOneShot(coinSound,0.5f); // تشغيل صوت جمع العملة
-        
+        birdAudio.PlayOneShot(coinSound, 0.5f);
     }
-
-
 }
