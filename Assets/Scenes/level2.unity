@@ -207,10 +207,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Pipes
+  m_Text: 'Pipes:
 
 
-    Coins'
+    Coins:'
 --- !u!222 &107263056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -987,8 +987,8 @@ Transform:
   m_GameObject: {fileID: 441868807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3523, y: 0.4586, z: 0}
-  m_LocalScale: {x: 1.0499715, y: 1.0507249, z: 1.0707}
+  m_LocalPosition: {x: -0.5192, y: 0.4586, z: 0}
+  m_LocalScale: {x: 1.0434433, y: 1.0507249, z: 1.0707}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1586,7 +1586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipe: {fileID: 8581610628992328253, guid: 2c14b0d0608c48b43b12554d0c68c9d8, type: 3}
   coinPrefab: {fileID: 743834561429824171, guid: 8741f07649a33084e97aac94b9e0dc74, type: 3}
-  spawnRatePipes: 4
+  spawnRatePipes: 2.5
   spawnRateCoins: 3
   heightOffsetPipes: 10
   heightOffsetCoins: 1.5

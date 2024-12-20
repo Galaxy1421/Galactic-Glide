@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipe: {fileID: 7438121012768608494, guid: 7cfb5e71c47f2134f9e478f4a9a4cbd4, type: 3}
   coinPrefab: {fileID: 743834561429824171, guid: 8741f07649a33084e97aac94b9e0dc74, type: 3}
-  spawnRatePipes: 5
+  spawnRatePipes: 4
   spawnRateCoins: 3
   heightOffsetPipes: 10
   heightOffsetCoins: 1.5

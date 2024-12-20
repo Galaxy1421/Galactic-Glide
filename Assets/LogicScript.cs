@@ -16,6 +16,11 @@ public class LogicScript : MonoBehaviour
 
     private float timer = 0f;        // المؤقت الزمني
     public float gameDuration = 60f; // مدة اللعبة (دقيقة واحدة)
+    
+    
+    public int coinsRequiredToUnlockPurpleTheme = 15;
+    public int coinsRequiredToUnlockNebulaTheme = 30;
+
 
     [ContextMenu("Increase Score")]
 
@@ -72,8 +77,8 @@ public class LogicScript : MonoBehaviour
     {
         Time.timeScale = 0;
         winScreen.SetActive(true); 
-        finalScoreText.text = "You passed " + pipeScore + " pipes\n" +
-                              "and collected " + coinScore + " coins!";
+        finalScoreText.text = "Pipes: " + pipeScore + "\n\n" +
+                              "Coins: " + coinScore;
     }
 
 
@@ -92,5 +97,16 @@ public class LogicScript : MonoBehaviour
     {
         Time.timeScale = 1; 
         SceneManager.LoadScene("menu"); 
+    }
+
+
+    public bool IsLevelUnlocked(string levelName)
+    {
+        if (levelName == "PurpleTheme" && coinScore >= coinsRequiredToUnlockPurpleTheme)
+            return true;
+        if (levelName == "NebulaTheme" && coinScore >= coinsRequiredToUnlockNebulaTheme)
+            return true;
+
+        return false;
     }
 }

@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: b388211a1625b034883016ff6cf8b4fa
+  - enabled: 1
+    path: Assets/Scenes/NebulaTheme.unity
+    guid: e87398bae7e9995498a0bbc39baf6967
+  - enabled: 1
+    path: Assets/Scenes/PurpleTheme.unity
+    guid: 46190b7f02daa26438b978637e2d64ea
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
