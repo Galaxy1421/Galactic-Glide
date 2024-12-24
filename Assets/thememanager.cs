@@ -19,8 +19,14 @@ public class ThemeManager : MonoBehaviour
         {
             lockedThemeMessage.SetActive(false);
         }
+        
     }
 
+
+
+
+
+    
 
     // وظيفة لتحميل الثيم بناءً على الاسم
 
