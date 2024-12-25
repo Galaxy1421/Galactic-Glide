@@ -169,8 +169,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f1509a8049a41684a9b6622efb09f6eb, type: 3}
-  m_Resource: {fileID: 8300000, guid: f1509a8049a41684a9b6622efb09f6eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1e80beaad2110f74bb347d53999feb6b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1e80beaad2110f74bb347d53999feb6b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipe: {fileID: 7732242669489517373, guid: b5039e9360cbfc640a2354966d36a113, type: 3}
   coinPrefab: {fileID: 1732457686077903969, guid: 370cad47b0870fe469be069a8203964e, type: 3}
-  spawnRatePipes: 4
+  spawnRatePipes: 2.5
   spawnRateCoins: 3
   heightOffsetPipes: 10
   heightOffsetCoins: 1.5
@@ -3149,6 +3149,10 @@ MonoBehaviour:
   finalScoreText: {fileID: 1307549236}
   timerText: {fileID: 1392049609}
   gameDuration: 30
+  coinsRequiredToUnlockPurpleTheme: 15
+  coinsRequiredToUnlockNebulaTheme: 30
+  lockedThemePurplePanel: {fileID: 0}
+  lockedThemeNebulaPanel: {fileID: 0}
 --- !u!4 &1448127936
 Transform:
   m_ObjectHideFlags: 0

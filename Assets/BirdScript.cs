@@ -24,6 +24,7 @@ public class BirdScript : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         MyRigidbody = GetComponent<Rigidbody2D>();
         birdAudio = GetComponent<AudioSource>();
 

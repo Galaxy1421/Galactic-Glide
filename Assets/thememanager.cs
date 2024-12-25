@@ -10,6 +10,7 @@ public class ThemeManager : MonoBehaviour
     public Text lockedThemeMessageText;  // النص داخل الرسالة
 
 
+
     private void Start()
     {
         // إيجاد LogicScript في المشهد
