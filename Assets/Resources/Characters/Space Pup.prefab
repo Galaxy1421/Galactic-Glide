@@ -264,11 +264,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyRigidbody: {fileID: 657409642217655302}
-  flapStrength: 8
+  flapStrength: 9
   rotatespeed: 3
   logic: {fileID: 0}
   birdIsAlive: 1
   flapSound: {fileID: 8300000, guid: 70f96274b38c79747964499815669f18, type: 3}
   hitSound: {fileID: 8300000, guid: 8d9190f957001ca43b16f8b91faf7170, type: 3}
   coinSound: {fileID: 8300000, guid: 79e95513163f0114b8c7ec6365257168, type: 3}
-  hitVolume: 5
+  hitVolume: 2

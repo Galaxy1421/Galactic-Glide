@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cf0c03cac507a498fbbfdc2116fc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipeMoveSpeed: 10
+  pipeMoveSpeed: 13
   deadZone: -45
   coinValue: 1
   pipeScore: 1
