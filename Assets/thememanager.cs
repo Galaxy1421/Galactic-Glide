@@ -5,17 +5,17 @@ using System.Collections;
 
 public class ThemeManager : MonoBehaviour
 {
-    public LogicScript logicScript; // مرجع إلى LogicScript للتحقق من العملات
-    public GameObject lockedThemeMessage; // مرجع إلى رسالة UI
-    public Text lockedThemeMessageText;  // النص داخل الرسالة
+    public LogicScript logicScript; 
+    public GameObject lockedThemeMessage; 
+    public Text lockedThemeMessageText;  
 
 
 
     private void Start()
     {
-        // إيجاد LogicScript في المشهد
+       
         logicScript = FindObjectOfType<LogicScript>();
-        // gameObject.SetActive(false);
+       
         if (lockedThemeMessage != null)
         {
             lockedThemeMessage.SetActive(false);
@@ -45,8 +45,8 @@ public class ThemeManager : MonoBehaviour
                 ? logicScript.coinsRequiredToUnlockPurpleTheme
                 : logicScript.coinsRequiredToUnlockNebulaTheme;
 
-            Debug.Log("Theme is locked: " + themeName); // عرض رسالة في Console
-                                                        // يمكنك هنا إضافة نافذة UI لعرض رسالة للمستخدم
+            Debug.Log("Theme is locked: " + themeName); 
+                                                   
 
 
             // تحديث النص داخل الرسالة

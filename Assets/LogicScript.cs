@@ -54,7 +54,7 @@ public class LogicScript : MonoBehaviour
             timerText.text = "Time Left: " + timeLeft + "s";
         }
 
-        // إنهاء اللعبة عند انقضاء الوقت
+   
         if (timer >= gameDuration)
         {
             EndGame();
@@ -62,7 +62,7 @@ public class LogicScript : MonoBehaviour
     }
     public void addPipeScore(int numOfpipes)
     {
-        pipeScore += numOfpipes; // أضف القيمة إلى المتغير العام
+        pipeScore += numOfpipes;
         UpdateScoreUI();
     }
 
@@ -71,7 +71,7 @@ public class LogicScript : MonoBehaviour
     {
         coinScore += coinValue;
         UpdateScoreUI();
-        CheckForThemeUnlock(); // تأكد من استدعاء هذه الوظيفة
+        CheckForThemeUnlock();
 
     }
 

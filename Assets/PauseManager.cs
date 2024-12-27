@@ -38,7 +38,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1; // استئناف الوقت
     }
 
-    // وظيفة للعودة إلى القائمة الرئيسية (اختياري)
+    
     public void LoadMainMenu()
     {
         Time.timeScale = 1; // استئناف الوقت قبل العودة

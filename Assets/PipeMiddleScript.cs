@@ -2,7 +2,7 @@
 
 public class PipeMiddleScript : MonoBehaviour
 {
-    public LogicScript logic; // مرجع إلى سكربت النقاط
+    public LogicScript logic; 
     private bool hasScored = false; // منع تكرار تسجيل النقاط
 
     void Start()
@@ -12,7 +12,7 @@ public class PipeMiddleScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // التحقق من أن اللاعب هو من مر بالنقطة وأن النقاط لم تُحسب من قبل
+      
         if (collision.gameObject.CompareTag("Player") && !hasScored)
         {
             logic.addPipeScore(1); // إضافة نقطة للأنبوب

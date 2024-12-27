@@ -12,7 +12,7 @@ public class PipeMoveScript : MonoBehaviour
 
     void Start()
     {
-        logic = FindObjectOfType<LogicScript>(); // إيجاد مرجع لسكربت إدارة النقاط
+        logic = FindObjectOfType<LogicScript>(); 
     }
 
 
@@ -54,7 +54,7 @@ public class PipeMoveScript : MonoBehaviour
     {
         // تعيين موضع جديد للعملة
         float randomY = Random.Range(-respawnRangeY, respawnRangeY);
-        float respawnX = transform.position.x + Random.Range(10f, 20f); // مكان جديد بعيد للأمام
+        float respawnX = transform.position.x + Random.Range(10f, 20f); 
         transform.position = new Vector3(respawnX, randomY, transform.position.z);
 
         Debug.Log("Coin respawned at: " + transform.position);
