@@ -7,7 +7,6 @@ public class PipeMoveScript : MonoBehaviour
     public int coinValue = 1;        // قيمة العملة عند جمعها
     public int pipeScore;
     public float respawnRangeY = 5f; // النطاق العشوائي لإعادة ظهور العملة
-    private bool pipeScored = false;      // لتجنب احتساب نقاط الأنبوب مرتين
     public LogicScript logic;
 
     void Start()
@@ -24,7 +23,7 @@ public class PipeMoveScript : MonoBehaviour
         // حذف الأنبوب عند خروجه من منطقة الرؤية
         if (transform.position.x < deadZone)
         {
-            Debug.Log("Pipe deleted");
+            Debug.Log("Pipe Or Coin deleted");
             Destroy(gameObject);
         }
     }
